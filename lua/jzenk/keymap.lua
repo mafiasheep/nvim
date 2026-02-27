@@ -1,3 +1,4 @@
+vim.g.mapleader = " "
 -- [[ Set up keymaps ]] See `:h vim.keymap.set()`, `:h mapping`, `:h keycodes`
 
 -- Use <Esc> to exit terminal mode
