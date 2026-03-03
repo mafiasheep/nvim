@@ -1,26 +1,24 @@
-vim.opt.guicursor = ""
+vim.g.mapleader = " " -- space leader key
+vim.o.number = true -- enable line numbers
+vim.o.relativenumber = true -- enable relative line numbers
+vim.o.tabstop = 4 -- how many spaces tab inserts
+vim.o.softtabstop = 4 -- how many spaces tab inserts
+vim.o.shiftwidth = 4 -- controls number of spaces when using >> or << commands
+vim.o.expandtab = true -- use appropriate number of spaces with tab
+vim.o.smartindent = true -- indenting correctly after {
+vim.o.autoindent = true -- copy indent from current line when starting new line
+vim.o.cursorline = true -- enable cursor line
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.wrap = false
+vim.o.hlsearch = false
+vim.o.incsearch = true
+vim.o.termguicolors = true
+vim.o.updatetime = 50
+vim.o.colorcolumn = "80"
+vim.o.scrolloff = 15 -- always keep 15 lines above/below cursor unless at start/end of file
+vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics
 
--- Print the line number in front of each line
-vim.o.number = true
-
--- Use relative line numbers, so that it is easier to jump with j, k. This will affect the 'number'
-vim.o.relativenumber = true
-
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-
-vim.opt.smartindent = true
-
--- Highlight the line where the cursor is on
-vim.o.cursorline = true
-
--- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 15
-
--- Show <tab> and trailing spaces
-vim.o.list = false
 
 -- Highlight when yanking (copying) text.
 -- Try it with `yap` in normal mode. See `:h vim.hl.on_yank()`
@@ -30,21 +28,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.hl.on_yank()
   end,
 })
-
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
-vim.opt.wrap = false
-
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
-
-vim.opt.updatetime = 50
-vim.opt.colorcolumn = "80"
-
-vim.g.mapleader = " "
-
 
