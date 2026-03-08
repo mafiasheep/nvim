@@ -19,7 +19,6 @@ vim.o.colorcolumn = "80"
 vim.o.scrolloff = 15 -- always keep 15 lines above/below cursor unless at start/end of file
 vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics
 
-
 -- Highlight when yanking (copying) text.
 -- Try it with `yap` in normal mode. See `:h vim.hl.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {

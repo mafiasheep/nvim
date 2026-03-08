@@ -14,8 +14,8 @@ require('packer').startup(function(use)
 			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 		}
 	}
-	use ({ 
-		"catppuccin/nvim", 
+	use ({
+		"catppuccin/nvim",
 		as = "catppuccin",
 		config = function()
 			vim.cmd('colorscheme catppuccin')
@@ -24,13 +24,33 @@ require('packer').startup(function(use)
 	use { 'folke/tokyonight.nvim', as = 'tokyonight' }
 	use { 'rose-pine/nvim', as = 'rose-pine' }
 
-	use ('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-	use ('theprimeagen/harpoon')	
-	use ('mbbill/undotree')
-    use ('neovim/nvim-lspconfig')
-    use ('williamboman/mason.nvim')
-    use ('williamboman/mason-lspconfig.nvim')
+    use 'tpope/vim-fugitive'
+	use 'theprimeagen/harpoon'
 
+    use {
+        "saghen/blink.cmp",
+        tag = "*",
+        requires = { "rafamadriz/friendly-snippets" }
+    }
+
+    use {
+        "mason-org/mason.nvim",
+        config = function()
+            require("mason").setup()
+        end,
+    }
+
+    use {
+        "neovim/nvim-lspconfig",
+        requires = "saghen/blink.cmp",
+    }
+
+    use {
+        "m4xshen/autoclose.nvim",
+        config = function()
+            require("autoclose").setup()
+        end,
+    }
 end)
 
 

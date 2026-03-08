@@ -6,6 +6,7 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Use <leader>pv to return to file buffer from file
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>G", vim.cmd.Git)
 
 -- Map <A-j>, <A-k>, <A-h>, <A-l> to navigate between windows in any modes
 vim.keymap.set({ 't', 'i' }, '<A-h>', '<C-\\><C-n><C-w>h')
