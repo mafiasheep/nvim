@@ -4,28 +4,31 @@
 vim.cmd [[packadd packer.nvim]]
 
 require('packer').startup(function(use)
-	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
-	use {
-		'nvim-telescope/telescope.nvim', tag = '*',
-		requires = {
-			'nvim-lua/plenary.nvim',
-			-- optional but recommended
-			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-		}
-	}
-	use ({
-		"catppuccin/nvim",
-		as = "catppuccin",
-		config = function()
-			vim.cmd('colorscheme catppuccin')
-		end
-	})
-	use { 'folke/tokyonight.nvim', as = 'tokyonight' }
-	use { 'rose-pine/nvim', as = 'rose-pine' }
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use {
+        'nvim-telescope/telescope.nvim', tag = '*',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            -- optional but recommended
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+        }
+    }
+    use({
+        "catppuccin/nvim",
+        as = "catppuccin",
+        config = function()
+            vim.cmd('colorscheme catppuccin')
+            -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+        end
+    })
+    use { 'folke/tokyonight.nvim', as = 'tokyonight' }
+    use { 'rose-pine/nvim', as = 'rose-pine' }
 
     use 'tpope/vim-fugitive'
-	use 'theprimeagen/harpoon'
+    use 'theprimeagen/harpoon'
 
     use {
         "saghen/blink.cmp",
@@ -52,5 +55,3 @@ require('packer').startup(function(use)
         end,
     }
 end)
-
-
