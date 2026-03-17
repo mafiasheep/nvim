@@ -1,6 +1,6 @@
-require("jzenk.keymap")
-require("jzenk.packer")
-require("jzenk.set")
-require("jzenk.lsp.init")
+require("sheep.keymap")
+require("sheep.packer")
+require("sheep.set")
+require("sheep.lsp.init")
 
 print("Hello jzenk")

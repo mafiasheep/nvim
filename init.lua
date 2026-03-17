@@ -1,11 +1,11 @@
-require("jzenk")
+require("sheep")
 
 -- increase startup-time. Remove this option if you want your OS clipboard to remain independent.
 -- See `:help 'clipboard'`
 vim.api.nvim_create_autocmd('UIEnter', {
-  callback = function()
-    vim.o.clipboard = 'unnamedplus'
-  end,
+    callback = function()
+        vim.o.clipboard = 'unnamedplus'
+    end,
 })
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),

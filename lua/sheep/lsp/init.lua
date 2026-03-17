@@ -96,4 +96,4 @@ vim.lsp.config('*', {
     flags = { debounce_text_changes = 200 },
 })
 
-vim.lsp.enable({ "lua_ls", "ts_ls", "pylsp", "java_language_server" })
+vim.lsp.enable({ "lua_ls", "ts_ls", "pylsp", "ruff" })
