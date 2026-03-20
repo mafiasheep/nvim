@@ -19,9 +19,16 @@ require('packer').startup(function(use)
         "catppuccin/nvim",
         as = "catppuccin",
         config = function()
-            vim.cmd('colorscheme catppuccin')
+            require('catppuccin').setup({
+                transparent_background = true,
+                float = {
+                    transparent = true,
+                    solid = false,
+                },
+            })
             -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
             -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+            vim.cmd('colorscheme catppuccin')
         end
     })
     use { 'folke/tokyonight.nvim', as = 'tokyonight' }

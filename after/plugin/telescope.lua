@@ -10,10 +10,42 @@ require('telescope').setup({
         file_ignore_patterns = {
             "node_modules",
             "dist",
-            "build",
-            ".git",
+            "build/",
+            "%.git",
             "venv",
+            "%.venv",
+            "cdk%.out",
+            "site%-packages",
             "__pycache__",
+        },
+    },
+
+    pickers = {
+        find_files = {
+            find_command = {
+                "rg",
+                "--files",
+                "--hidden",
+                "--follow",
+                "--glob", "!**/site-packages/*",
+                "--glob", "!**/.venv/*",
+                "--glob", "!**/venv/*",
+                "--glob", "!**/node_modules/*",
+                "--glob", "!**/cdk.out/*",
+            },
+        },
+        live_grep = {
+            additional_args = function()
+                return {
+                    "--hidden",
+                    "--follow",
+                    "--glob", "!**/site-packages/*",
+                    "--glob", "!**/.venv/*",
+                    "--glob", "!**/venv/*",
+                    "--glob", "!**/node_modules/*",
+                    "--glob", "!**/cdk.out/*",
+                }
+            end,
         },
     },
 })
